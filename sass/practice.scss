@@ -1,0 +1,131 @@
+// $color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+
+$color-primary: #f9ed69;
+$color-secondary: #f08a5d;
+$color-tertiary: #f2d7df;
+$color-text-dark: #333;
+$color-text-light: #eee;
+$btn-width: 150px;
+
+// MIXIN
+@mixin clearFix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+@mixin resetLink($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+// FUNCTION
+@function divide($num1, $num2) {
+  @return $num1/$num2;
+}
+
+// PLACEHOLDER
+%btn-placeholder {
+  padding: 10px;
+  border-radius: 100px;
+  display: inline-block;
+  text-align: center;
+  @include resetLink($color-text-light);
+  // text-decoration: none;
+  // text-transform: uppercase;
+  width: $btn-width;
+}
+
+// COLORS:
+// Light green: #7ed56f
+// Medium green: #55c57a
+// Dark green: #28b485
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  // margin: 30px;
+  margin: divide(90, 3) * 1px;
+  background-color: $color-primary;
+  @include clearFix;
+
+  // &::after {
+  //   content: '';
+  //   clear: both;
+  //   display: table;
+  // }
+  .navigation {
+    list-style: none;
+    float: left;
+
+    li {
+      display: inline-block;
+      margin-left: 30px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      a:link,
+      a:visited {
+        // text-decoration: none;
+        // text-transform: uppercase;
+        // color: $color-text-dark;
+        @include resetLink($color-text-dark);
+      }
+    }
+  }
+}
+
+.btns {
+  float: right;
+
+  .btn-main,
+  .btn-alt {
+    &:link,
+    &:visited {
+      // padding: 10px;
+      // border-radius: 100px;
+      // display: inline-block;
+      // text-align: center;
+      // @include resetLink($color-text-light);
+      // // text-decoration: none;
+      // // text-transform: uppercase;
+      // width: $btn-width;
+    }
+  }
+  .btn-main {
+    &:link,
+    &:visited {
+      @extend %btn-placeholder;
+      background-color: $color-secondary;
+    }
+
+    &:hover,
+    &:active {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+
+  .btn-alt {
+    &:link,
+    &:visited {
+      @extend %btn-placeholder;
+      background-color: $color-tertiary;
+    }
+
+    &:hover,
+    &:active {
+      background-color: darken($color-tertiary, 10%);
+    }
+  }
+}

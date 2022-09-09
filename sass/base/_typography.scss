@@ -1,0 +1,84 @@
+/* Custom Fonts */
+@font-face {
+  font-family: lato-light;
+  src: url(/fonts/lato/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: lato-medium;
+  src: url(/fonts/lato/Lato-Medium.ttf);
+}
+
+@font-face {
+  font-family: lato-regular;
+  src: url(/fonts/lato/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: lato-bold;
+  src: url(/fonts/lato/Lato-Bold.ttf);
+}
+
+body {
+  font-family: lato-regular;
+  font-weight: $regular-font-weight;
+  color: $color-grey-dark;
+  line-height: 1.7;
+}
+
+/* Headings */
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  text-align: center;
+
+  .heading-primary-main {
+    letter-spacing: 3.5rem;
+    @include headingStyle(6rem, $regular-font-weight);
+    @include addAnimation(moveInLeft);
+  }
+
+  .heading-primary-sub {
+    margin-bottom: 5rem;
+    letter-spacing: 1.7rem;
+    @include headingStyle(2rem, $regular-font-weight);
+    @include addAnimation(moveInRight);
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: $heading-font-weight;
+  background: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  color: transparent;
+  display: inline-block;
+  -webkit-background-clip: text;
+
+  &:hover {
+    text-shadow: 0.5rem 1rem 2rem rgba($color: $color-black, $alpha: 0.2);
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: $heading-font-weight;
+  text-transform: uppercase;
+  margin-bottom: $u-margin-bottom-small;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  margin-bottom: $p-margin-bottom;
+
+  &:not(:last-child) {
+    margin-bottom: $p-margin-bottom;
+  }
+}
