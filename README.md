@@ -1,2 +1,2 @@
-# Sass-Tutorai
+# Sass-Tutoral
 Using jonas sass tutorial
