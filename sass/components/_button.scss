@@ -43,7 +43,7 @@
 .btn_white {
   background-color: $color-white;
   color: $color-grey-dark;
-  @include addAnimation(moveInButtom);
+  // @include addAnimation(moveInButtom);
 
   &::after {
     background-color: $color-white;
