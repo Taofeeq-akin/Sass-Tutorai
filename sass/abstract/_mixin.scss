@@ -2,6 +2,7 @@
   animation-name: $animation;
   animation-timing-function: ease-in-out;
   animation-duration: 1s;
+  // animation-iteration-count: infinite;
 }
 
 @mixin headingStyle($fs, $fw) {
